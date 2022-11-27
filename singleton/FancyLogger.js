@@ -1,11 +1,18 @@
-export default class FancyLogger {
+// without Singleton Pattern
+// export default 
+class FancyLogger {
     constructor() {
-        this.logs = [];
+        if (FancyLogger.instance == null){
+            this.logs = [];
+            FancyLogger.instance = this;
+        }
+
+        return FancyLogger.instance;
     }
 
     log(message) {
         this.logs.push(message);
-        console.log(`FANCY: ${message}`);
+        console.log(`message: ${message}`);
     }
 
     logCount() {
@@ -13,6 +20,6 @@ export default class FancyLogger {
     }
 }
 
-// const fancyLogger = new FancyLogger();
-// fancyLogger.log('1 file');
-// fancyLogger.logCount();
+// with Singleton Pattern 
+const logger = new FancyLogger();
+export default logger
