@@ -14,7 +14,7 @@ namespace Singleton
         private static Singleton? _instance;
         public List<int> nums = new();
 
-        public static Singleton GetInstance
+        public static Singleton GetInstance // can be also method
         {
             get 
             {
@@ -35,9 +35,6 @@ namespace Singleton
 
     class NotSingleton
     {
-        // The Singleton's constructor should always be private to prevent
-        // direct construction calls with the `new` operator.
-
         public List<int> nums = new();
 
         public void someBusinessLogic(int i)
@@ -50,7 +47,6 @@ namespace Singleton
     {
         static void Main(string[] args)
         {
-            // The client code.
             Singleton s1 = Singleton.GetInstance;
             Singleton s2 = Singleton.GetInstance; // working on the same instance
             // Singleton s3 = new(); // can't do it because of private constructor
