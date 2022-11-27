@@ -1,4 +1,4 @@
-class FancyLogger {
+export default class FancyLogger {
     constructor() {
         this.logs = [];
     }
@@ -13,6 +13,6 @@ class FancyLogger {
     }
 }
 
-const fancyLogger = new FancyLogger();
-fancyLogger.log('1 file');
-fancyLogger.logCount();
+// const fancyLogger = new FancyLogger();
+// fancyLogger.log('1 file');
+// fancyLogger.logCount();
