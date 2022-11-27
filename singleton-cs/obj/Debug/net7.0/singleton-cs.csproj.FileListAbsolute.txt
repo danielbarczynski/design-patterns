@@ -1,0 +1,15 @@
+C:\Users\itsmy\source\repos\WhatIveBecome\design-patterns\singleton-cs\bin\Debug\net7.0\singleton-cs.exe
+C:\Users\itsmy\source\repos\WhatIveBecome\design-patterns\singleton-cs\bin\Debug\net7.0\singleton-cs.deps.json
+C:\Users\itsmy\source\repos\WhatIveBecome\design-patterns\singleton-cs\bin\Debug\net7.0\singleton-cs.runtimeconfig.json
+C:\Users\itsmy\source\repos\WhatIveBecome\design-patterns\singleton-cs\bin\Debug\net7.0\singleton-cs.dll
+C:\Users\itsmy\source\repos\WhatIveBecome\design-patterns\singleton-cs\bin\Debug\net7.0\singleton-cs.pdb
+C:\Users\itsmy\source\repos\WhatIveBecome\design-patterns\singleton-cs\obj\Debug\net7.0\singleton-cs.csproj.AssemblyReference.cache
+C:\Users\itsmy\source\repos\WhatIveBecome\design-patterns\singleton-cs\obj\Debug\net7.0\singleton-cs.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\itsmy\source\repos\WhatIveBecome\design-patterns\singleton-cs\obj\Debug\net7.0\singleton-cs.AssemblyInfoInputs.cache
+C:\Users\itsmy\source\repos\WhatIveBecome\design-patterns\singleton-cs\obj\Debug\net7.0\singleton-cs.AssemblyInfo.cs
+C:\Users\itsmy\source\repos\WhatIveBecome\design-patterns\singleton-cs\obj\Debug\net7.0\singleton-cs.csproj.CoreCompileInputs.cache
+C:\Users\itsmy\source\repos\WhatIveBecome\design-patterns\singleton-cs\obj\Debug\net7.0\singleton-cs.dll
+C:\Users\itsmy\source\repos\WhatIveBecome\design-patterns\singleton-cs\obj\Debug\net7.0\refint\singleton-cs.dll
+C:\Users\itsmy\source\repos\WhatIveBecome\design-patterns\singleton-cs\obj\Debug\net7.0\singleton-cs.pdb
+C:\Users\itsmy\source\repos\WhatIveBecome\design-patterns\singleton-cs\obj\Debug\net7.0\singleton-cs.genruntimeconfig.cache
+C:\Users\itsmy\source\repos\WhatIveBecome\design-patterns\singleton-cs\obj\Debug\net7.0\ref\singleton-cs.dll
