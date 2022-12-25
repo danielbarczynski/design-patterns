@@ -20,7 +20,7 @@ public class Computer
     public void DisplayConfiguration() // #3 mainly that's why, (#4)
     {
         Console.WriteLine("Typ: " + Type);
-        Console.WriteLine("Plyta glowna: " + MotherBoard);
+        Console.WriteLine("Plyta glowna: " + z);
         Console.WriteLine("Procesor: " + Processor);
         Console.WriteLine("Dysk: " + Disc);
         Console.WriteLine("Monitor: " + Screen);

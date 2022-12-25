@@ -3,11 +3,10 @@ Builder concreteBuilder = new ConcreteBuilder();
 Builder marbleBuilder = new MarbleBuilder();
 
 director.Construct(concreteBuilder);
-Console.WriteLine(concreteBuilder.product.name);
+concreteBuilder.house.ShowHouse();
 
 director.Construct(marbleBuilder);
-Product product = marbleBuilder.product;
-Console.WriteLine(product.name);
+marbleBuilder.house.ShowHouse();
 
 class Director
 {
@@ -21,59 +20,75 @@ class Director
 
 abstract class Builder
 {
-    public Product product;
-
-    public Builder()
-    {
-        product = new Product();
-    }
+    public House house;
 
     public abstract void BuildWall();
     public abstract void BuildFloor();
     public abstract void BuildRoof();
 }
 
-public class Product
+public class House
 {
-    public string name = "";
-    public Product()
+    public string Type {get; set;}
+    public string Wall { get; set; }
+    public string Floor { get; set; }
+    public string Roof { get; set; }
+    
+    public House(string type)
     {
-        name = "The house of: ";
+        Type = type;
+    }
+
+    public void ShowHouse()
+    {
+        Console.WriteLine(Type);
+        Console.WriteLine(Wall);
+        Console.WriteLine(Floor);
+        Console.WriteLine(Roof);
     }
 }
 
 class ConcreteBuilder : Builder
 {
+    public ConcreteBuilder()
+    {
+        house = new House("Concrete house");
+    }
     public override void BuildWall()
     {
-        product.name += "concrete wall ";
+        house.Wall += "concrete wall ";
     }
 
     public override void BuildFloor()
     {
-        product.name += "concrete floor ";
+        house.Floor += "concrete floor ";
     }
 
     public override void BuildRoof()
     {
-        product.name += "concrete roof";
+        house.Roof += "concrete roof";
     }
 }
 
 class MarbleBuilder : Builder
 {
+    public MarbleBuilder()
+    {
+        house = new House("Marble house");    
+    }
+    
     public override void BuildWall()
     {
-        product.name += "marble wall ";
+        house.Wall += "marble wall ";
     }
 
     public override void BuildFloor()
     {
-        product.name += "marble floor ";
+        house.Floor += "marble floor ";
     }
 
     public override void BuildRoof()
     {
-        product.name += "marble roof";
+        house.Roof += "marble roof";
     }
 }
