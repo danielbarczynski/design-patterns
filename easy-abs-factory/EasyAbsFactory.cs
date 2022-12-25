@@ -1,90 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
+﻿var primarySchoolTest = new MathTest(new PrimarySchool());
+primarySchoolTest.CreateTest();
+System.Console.WriteLine(primarySchoolTest.number);
 
-
-interface IShape { }
-class Simple : IShape { }
-class Hard : IShape { }
-
-interface INumber { }
-class RealNumber : INumber { }
-class ComplexNumber : INumber { }
-
+interface INumber {};
+class EasyNumber : INumber { };
+class HardNumber : INumber { };
+// you can add IShape with the convention
 abstract class MathTestFactory
 {
-    public abstract IShape CreateShape();
-    public abstract INumber CreateNumber();
+    public abstract INumber CreateTest();
 }
 
-class PrimarySchoolTestFactory : MathTestFactory
+class PrimarySchool : MathTestFactory
 {
-    public override IShape CreateShape()
+    public override INumber CreateTest()
     {
-        return new Simple();
-    }
-
-    public override INumber CreateNumber()
-    {
-        return new RealNumber();
+        return new EasyNumber();
     }
 }
-
-class HighSchoolTestFactory : MathTestFactory
-{
-    public override IShape CreateShape()
-    {
-        return new Hard();
-    }
-
-    public override INumber CreateNumber()
-    {
-        return new ComplexNumber();
-    }
-}
-
+// you can add SecondarySchool with the convention for HardNumber
 class MathTest
 {
-
-    private MathTestFactory mathTestFactory;
-
-    public IShape shape;
+    private MathTestFactory _mathTest;
     public INumber number;
 
     public MathTest(MathTestFactory mathTestFactory)
     {
-        this.mathTestFactory = mathTestFactory;
+        _mathTest = mathTestFactory;
     }
 
-    public void GenerateTest()
+    public void CreateTest()
     {
-        this.shape = this.mathTestFactory.CreateShape();
-        this.number = this.mathTestFactory.CreateNumber();
-    }
-
-}
-
-
-/* ############################################## */
-
-
-class MainClass
-{
-    public static void Main(string[] args)
-    {
-
-        MathTest mathTest;
-
-        mathTest = new MathTest(new PrimarySchoolTestFactory());
-        mathTest.GenerateTest();
-        Console.WriteLine(mathTest.shape);
-        Console.WriteLine(mathTest.number);
-
-        Console.WriteLine();
-
-        mathTest = new MathTest(new HighSchoolTestFactory());
-        mathTest.GenerateTest();
-        Console.WriteLine(mathTest.shape);
-        Console.WriteLine(mathTest.number);
-
+        number = _mathTest.CreateTest();
     }
 }
