@@ -1,21 +1,26 @@
-﻿using System;
+﻿Director director = new Director();
+Builder concreteBuilder = new ConcreteBuilder();
+Builder marbleBuilder = new MarbleBuilder();
 
+director.Construct(concreteBuilder);
+Console.WriteLine(concreteBuilder.product.name);
+
+director.Construct(marbleBuilder);
+Product product = marbleBuilder.product;
+Console.WriteLine(product.name);
 
 class Director
 {
-
-    public void construct(Builder builder)
+    public void Construct(Builder builder)
     {
-        builder.build_part_a(); // metoda build nr1
-        builder.build_part_b();
-        builder.build_part_c();
+        builder.BuildWall();
+        builder.BuildFloor();
+        builder.BuildRoof();
     }
-
 }
 
 abstract class Builder
 {
-
     public Product product;
 
     public Builder()
@@ -23,82 +28,52 @@ abstract class Builder
         product = new Product();
     }
 
-    public abstract void build_part_a();// metoda build nr2
-
-    public abstract void build_part_b();
-
-    public abstract void build_part_c();
-
+    public abstract void BuildWall();
+    public abstract void BuildFloor();
+    public abstract void BuildRoof();
 }
+
 public class Product
 {
-
     public string name = "";
-
-    public Product() // if deleted there is only abc
+    public Product()
     {
-        name = "produkt";
+        name = "The house of: ";
     }
-
 }
 
-class ConcreteBuilder1 : Builder
+class ConcreteBuilder : Builder
 {
-
-    public override void build_part_a()// metoda build nr3
+    public override void BuildWall()
     {
-        product.name += "a";
+        product.name += "concrete wall ";
     }
 
-    public override void build_part_b()
+    public override void BuildFloor()
     {
-        product.name += "b";
-    }
-    public override void build_part_c()
-    {
-        product.name += "c";
+        product.name += "concrete floor ";
     }
 
+    public override void BuildRoof()
+    {
+        product.name += "concrete roof";
+    }
 }
 
-
-class ConcreteBuilder2 : Builder
+class MarbleBuilder : Builder
 {
-
-    public override void build_part_a()
+    public override void BuildWall()
     {
-        product.name += "A";
+        product.name += "marble wall ";
     }
 
-    public override void build_part_b()
+    public override void BuildFloor()
     {
-        product.name += "B";
-    }
-    public override void build_part_c()
-    {
-        product.name += "C";
+        product.name += "marble floor ";
     }
 
-}
-
-public class Program24
-{
-    static void Main(string[] args)
+    public override void BuildRoof()
     {
-
-        Director director = new Director();
-
-        Builder concrete_builder = new ConcreteBuilder1();
-
-        director.construct(concrete_builder);
-        Product product = concrete_builder.product;
-        Console.WriteLine(product.name);
-
-        Builder concrete_builder2 = new ConcreteBuilder2(); //zmodyfikowane przeze mnie, działa :)
-
-        director.construct(concrete_builder2);
-        product = concrete_builder2.product;
-        Console.WriteLine(product.name);
-
+        product.name += "marble roof";
     }
 }
